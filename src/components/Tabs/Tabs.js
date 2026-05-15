@@ -4,25 +4,31 @@ import Tab from "./Tab";
 
 
 const Tabs = (props) => {
-  const [activeDescState, setActiveDescState] = useState(null)
+  const [active, setActive] = useState(null);
 
   useEffect(() => {
-    console.log(React.Children.toArray(props.children))
     const defaultChildEl = React.Children.toArray(props.children)
       .find((el) => el.props.eventKey === props.defaultActiveKey)
     
-    setActiveDescState(defaultChildEl.props.children)
+    setActive({
+      id: props.id + defaultChildEl.props.eventKey,
+      p: defaultChildEl.props.children
+    })
   }, [])
 
   return (
     <>
       <StyledTabs>
         {React.Children.map(props.children, (child) => {
-          return React.cloneElement(child, {onActive: setActiveDescState})
-        })}
+          const itemId = props.id + child.props.eventKey;
+          console.log(itemId === active?.id)
+          return (
+            <Tab $isActive={itemId === active?.id} id={itemId} {...child.props} onActive={setActive} />
+          )
+        } )}
       </StyledTabs>
       <div>
-        {activeDescState}
+        {active?.p}
       </div>
     </>
   )

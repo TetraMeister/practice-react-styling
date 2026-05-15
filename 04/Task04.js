@@ -21,7 +21,7 @@ const Task04 = () => {
                 </RBTabs>
             </Col>
             <Col>
-                <Tabs defaultActiveKey="profile">
+                <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example1">
                     <Tab eventKey="home" title="Home">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur condimentum lacus nec ligula faucibus rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; </p>
                     </Tab>

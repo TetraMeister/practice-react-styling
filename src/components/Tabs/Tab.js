@@ -1,14 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import { StyledTab } from "./Tab.styled";
 
 const Tab = (props) => {
-  const {onActive} = props;
+  const {onActive, $isActive} = props;
 
   return (
-    <StyledTab href={`/${props.eventKey}`} onClick={(el) => {
+    <StyledTab href='#' onClick={(el) => {
       el.preventDefault();
-      onActive(props.children)
-    }} disabled={props.disabled}>{props.title}</StyledTab>
+      onActive({
+        id: props.id,
+        p: props.children
+      })
+    }} disabled={props.disabled} $isActive={$isActive}>{props.title}</StyledTab>
   )
 }
 
