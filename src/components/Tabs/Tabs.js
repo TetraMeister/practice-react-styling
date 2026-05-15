@@ -21,7 +21,6 @@ const Tabs = (props) => {
       <StyledTabs>
         {React.Children.map(props.children, (child) => {
           const itemId = props.id + child.props.eventKey;
-          console.log(itemId === active?.id)
           return (
             <Tab $isActive={itemId === active?.id} id={itemId} {...child.props} onActive={setActive} />
           )
