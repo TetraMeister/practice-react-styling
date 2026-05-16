@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Row, Col, Card as RBCard, Button as RBButton } from 'react-bootstrap';
 import Button from '../src/components/Button'
+import Card from '../src/components/Card';
 
 const Task05 = () => {
     return (
@@ -20,8 +21,8 @@ const Task05 = () => {
                 </RBCard>
             </Col>
             <Col>
-                {/* <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="https://picsum.photos/100/80" />
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img src="https://picsum.photos/100/80" />
                     <Card.Body>
                         <Card.Title>Card Title</Card.Title>
                         <Card.Text>
@@ -30,7 +31,7 @@ const Task05 = () => {
                         </Card.Text>
                         <Button variant="primary">Go somewhere</Button>
                     </Card.Body>
-                </Card> */}
+                </Card>
             </Col>
         </Row>
     )
